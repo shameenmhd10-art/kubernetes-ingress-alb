@@ -22,6 +22,9 @@ with monitoring implemented using **Prometheus and Grafana**.
 User → ALB → Ingress → Kubernetes Service → Pod
 
 ---
+### Architecture Diagram
+
+![EKS ALB Ingress Architecture](docs/architecture.png)
 
 ## 🚀 Features Implemented
 
