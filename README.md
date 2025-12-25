@@ -74,6 +74,23 @@ User → ALB → Ingress → Kubernetes Service → Pod
 
 ---
 
+## 📸 Monitoring Screenshots
+
+### Grafana Overview Dashboard
+![Grafana Overview](docs/screenshots/grafana-overview.png)
+
+### Kubernetes Cluster Metrics
+![Kubernetes Cluster](docs/screenshots/grafana-k8s-cluster.png)
+
+### API Server Metrics
+![API Server](docs/screenshots/grafana-api-server.png)
+
+### Node Exporter Metrics
+![Node Exporter](docs/screenshots/grafana-node-exporter.png)
+
+
+---
+
 ## 🧪 Status
 
 ✅ EKS Cluster running  
