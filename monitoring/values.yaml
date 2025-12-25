@@ -1,0 +1,95 @@
+# =========================
+# Prometheus Configuration
+# =========================
+
+server:
+  enabled: true
+
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 9090
+
+  persistentVolume:
+    enabled: true
+    storageClass: gp3
+    size: 8Gi
+
+  retention: "15d"
+
+  resources:
+    requests:
+      cpu: 200m
+      memory: 512Mi
+    limits:
+      cpu: 500m
+      memory: 1Gi
+
+# =========================
+# Alertmanager Configuration
+# =========================
+
+alertmanager:
+  enabled: true
+
+  persistentVolume:
+    enabled: true
+    storageClass: gp3
+    size: 2Gi
+
+# =========================
+# Node Exporter
+# =========================
+
+nodeExporter:
+  enabled: true
+
+# =========================
+# kube-state-metrics
+# =========================
+
+kubeStateMetrics:
+  enabled: true
+
+# =========================
+# Pushgateway
+# =========================
+
+pushgateway:
+  enabled: true
+
+# =========================
+# Grafana Configuration
+# =========================
+
+grafana:
+  enabled: true
+
+  adminUser: admin
+
+  service:
+    type: ClusterIP
+    port: 80
+
+  persistence:
+    enabled: true
+    storageClassName: gp3
+    size: 5Gi
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 300m
+      memory: 512Mi
+
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Prometheus
+          type: prometheus
+          url: http://prometheus-server.monitoring.svc.cluster.local
+          access: proxy
+          isDefault: true
