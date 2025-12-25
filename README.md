@@ -88,6 +88,16 @@ User → ALB → Ingress → Kubernetes Service → Pod
 ### Node Exporter Metrics
 ![Node Exporter](docs/screenshots/grafana-node-exporter.png)
 
+### Helm Configuration
+
+Custom Helm values used for Prometheus & Grafana are available at:
+
+📁 `monitoring/values.yaml`
+
+Includes:
+- Persistent storage (EBS gp3)
+- Resource limits
+- Grafana datasource auto-configuration
 
 ---
 
